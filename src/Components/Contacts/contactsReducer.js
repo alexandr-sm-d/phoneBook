@@ -7,7 +7,6 @@ let initialState = {
 const contactsReducer = (state = initialState, action) => {
     switch (action.type) {
         case GET_CONTACTS: {
-            debugger
             return {
                 ...state,
                 contacts: [...state.contacts, ...action.contacts]

@@ -1,5 +1,44 @@
 {
   "contacts": [
-    { "id": 1, "name": "json-server", "author": "typicode" }
+    {
+      "name": "alex",
+      "id": 1
+    },
+    {
+      "name": "vlad",
+      "id": 2
+    },
+    {
+      "name": "bdh",
+      "id": 3
+    },
+    {
+      "name": "vtru",
+      "id": 4
+    },
+    {
+      "name": "a",
+      "id": 5
+    },
+    {
+      "name": "a",
+      "id": 6
+    },
+    {
+      "name": "alex",
+      "id": 7
+    },
+    {
+      "name": "alex",
+      "id": 8
+    },
+    {
+      "name": "hoou",
+      "id": 9
+    },
+    {
+      "name": "hoou",
+      "id": 10
+    }
   ]
 }
