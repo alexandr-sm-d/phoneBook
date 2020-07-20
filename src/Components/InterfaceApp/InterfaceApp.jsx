@@ -1,9 +1,14 @@
-import React from "react";
+import React, {useState} from "react";
+import NewContact from "../Contacts/NewContact/NewContact";
 
 const InterfaceApp = props => {
+    const [newContactMode, setNewContactMode] = useState(false)
+
     return (
         <div>
-            InterfaceApp
+            {!newContactMode && <button onClick={() => setNewContactMode(true)}>new contact</button>}
+            {newContactMode && <NewContact/>}
+            {newContactMode && <button onClick={()=>setNewContactMode(false)}>Close</button>}
         </div>
     )
 }
