@@ -1,13 +1,8 @@
-import * as axios from "axios";
-
 const GET_CONTACTS = 'GET_CONTACTS'
 
 let initialState = {
-    contacts: [{id: 1, name: 'alex'}, {id: 2, name: 'vlad'}]
+    contacts: []
 }
-
-export const getContactsAC = (contacts) => ({type: GET_CONTACTS, contacts})
-
 
 const contactsReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -23,4 +18,5 @@ const contactsReducer = (state = initialState, action) => {
     }
 }
 
+export const getContactsAC = (contacts) => ({type: GET_CONTACTS, contacts})
 export default contactsReducer;

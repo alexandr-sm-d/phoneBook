@@ -10,7 +10,6 @@ class Contacts extends React.Component {
         let {contacts} = this.props.contacts
         return (
             <div>
-                Hello
                 {contacts.map((user) => <User name={user.name}/>)}
             </div>
         )

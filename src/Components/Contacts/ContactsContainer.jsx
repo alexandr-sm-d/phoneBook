@@ -9,13 +9,8 @@ const mapStateToProps = state => {
     }
 }
 
-export const getContactsTC = () => {
-    return dispatch => {
-        axios.get('/contacts')
-            .then(response => {
-                debugger
-                dispatch(getContactsAC(response.data))
-            })
-    }
+export const getContactsTC = () => async dispatch => {
+    const response = await axios.get('/contacts')
+    dispatch(getContactsAC(response.data))
 }
 export default connect(mapStateToProps, {getContactsTC})(Contacts)
