@@ -18,8 +18,9 @@ export const deleteContact = (id) => async dispatch => {
     await axios.delete('/contacts/' + id)
     dispatch(getContacts())
 }
-
+let a = 'test'
 export const updateContact = (formData, id) => async dispatch => {
+    console.log(a)
     debugger
     await axios.put('/contacts/' + id, formData)
     dispatch(getContacts())

@@ -10,9 +10,11 @@ export const UpdateContact = (props) => {
     // 5. вроде работает! разбери! запиши!!
     function solve(formData) {
         let id = props.id
-        props.updateContact(formData, id)
+        let a = 'fail'
         debugger // в id то что нужно
+        props.updateContact(formData, id)
     }
+
     return (
         <div>
             {/*<NewContactReduxForm onSubmit={props.updateContact}/>*/}
