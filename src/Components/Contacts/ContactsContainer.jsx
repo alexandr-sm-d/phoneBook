@@ -20,9 +20,9 @@ export const deleteContact = (id) => async dispatch => {
 }
 
 export const updateContact = (formData) => async dispatch => {
-    debugger
     await axios.put('/contacts/1', formData)
     dispatch(getContacts())
 }
+
 
 export default connect(mapStateToProps, {getContacts, deleteContact, updateContact})(Contacts)
