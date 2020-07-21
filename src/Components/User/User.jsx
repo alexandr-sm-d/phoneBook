@@ -9,7 +9,8 @@ const User = ({id, name, deleteContact, updateContact}) => {
     return (
         <div>
             {!editMode && name}
-            {editMode && <UpdateContact id={id} updateContact={updateContact}/>}
+            {editMode &&
+            <UpdateContact id={id} updateContact={updateContact}/>}
             <InterfaceContact id={id} deleteContact={deleteContact} setEditMode={setEditMode}/>
         </div>
     )
