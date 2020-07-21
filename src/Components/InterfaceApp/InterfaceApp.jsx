@@ -1,5 +1,5 @@
 import React, {useState} from "react";
-import NewContact from "../Contacts/NewContact/NewContact";
+import NewContact from "../Contacts/NewContact/NewContactContainer";
 
 const InterfaceApp = props => {
     const [newContactMode, setNewContactMode] = useState(false)

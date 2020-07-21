@@ -9,7 +9,7 @@ const contactsReducer = (state = initialState, action) => {
         case GET_CONTACTS: {
             return {
                 ...state,
-                contacts: [...state.contacts, ...action.contacts]
+                contacts: [...action.contacts]
             }
         }
         default:

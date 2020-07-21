@@ -1,10 +1,14 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
-import {connect} from "react-redux";
 import * as axios from "axios";
-import {getContactsTC} from "../ContactsContainer";
+import {getContacts} from "../ContactsContainer";
 
-const NewContact = ({addContact}) => {
+export const addContact = (formData) => async dispatch => {
+    await axios.post('/contacts', formData)
+    dispatch(getContacts())
+}
+
+export const NewContact = ({addContact}) => {
     return (
         <div>
             <NewContactReduxForm onSubmit={addContact}/>
@@ -15,7 +19,7 @@ const NewContact = ({addContact}) => {
 const NewContactForm = props => {
     return (
         <form onSubmit={props.handleSubmit}>
-            new contact form
+            new contact:
             <Field
                 type="text"
                 placeholder="Enter your name"
@@ -30,12 +34,3 @@ const NewContactForm = props => {
 const NewContactReduxForm = reduxForm({
     form: 'new_contact'
 })(NewContactForm)
-
-const addContact = (formData) => async dispatch => {
-    await axios.post('/contacts', formData)
-    dispatch(getContactsTC())
-}
-
-const NewContactContainer = connect(null, {addContact})(NewContact)
-
-export default NewContactContainer

@@ -9,8 +9,13 @@ const mapStateToProps = state => {
     }
 }
 
-export const getContactsTC = () => async dispatch => {
+export const getContacts = () => async dispatch => {
     const response = await axios.get('/contacts')
     dispatch(getContactsAC(response.data))
 }
-export default connect(mapStateToProps, {getContactsTC})(Contacts)
+
+export const deleteContact = (id) => async dispatch => {
+    await axios.delete('/contacts/' + id)
+    dispatch(getContacts())
+}
+export default connect(mapStateToProps, {getContacts, deleteContact})(Contacts)
