@@ -31,6 +31,6 @@ const NewContactForm = props => {
     )
 }
 
-const NewContactReduxForm = reduxForm({
+export const NewContactReduxForm = reduxForm({
     form: 'new_contact'
 })(NewContactForm)

@@ -1,10 +1,16 @@
-import React from 'react';
+import React, {useState} from 'react';
+import InterfaceContact from "../InterfaceContact/InterfaceContact";
+import UpdateContactContainer from "../Contacts/UpdateContact/UpdateContactContainer";
 
 const User = ({id, name, deleteContact}) => {
+
+    const [editMode, setEditMode] = useState(false)
+
     return (
         <div>
-            {name}
-            <button onClick={() => deleteContact(id)}>Delete</button>
+            {!editMode && name}
+            {editMode && <UpdateContactContainer/>}
+            <InterfaceContact id={id} deleteContact={deleteContact} setEditMode={setEditMode}/>
         </div>
     )
 }
