@@ -13,7 +13,7 @@ class Contacts extends React.Component {
                 {contacts.map((user) =>
                     <User key={user.id} name={user.name} id={user.id}
                           deleteContact={this.props.deleteContact}
-
+                          updateContact={this.props.updateContact}
                     />)}
             </div>
         )
