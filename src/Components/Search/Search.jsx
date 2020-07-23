@@ -7,12 +7,15 @@ import {getContactsAC} from "../Contacts/contactsReducer";
 
 const search = () => async dispatch => {
     const response = await axios.get('/contacts')
-    const inputStr = requestState().form.search.values.search_name
-    let matchContacts = response.data.filter((user)=>{
-        return user.name.includes(inputStr)
-    })
-    console.log(matchContacts)
-    dispatch(getContactsAC(matchContacts))
+    if (requestState().form.search.values === undefined) {
+        dispatch(getContactsAC(response.data))
+    } else {
+        const inputStr = requestState().form.search.values.search_name
+        let matchContacts = response.data.filter((user) => {
+            return user.name.includes(inputStr)
+        })
+        dispatch(getContactsAC(matchContacts))
+    }
 }
 
 const Search = ({search}) => {
