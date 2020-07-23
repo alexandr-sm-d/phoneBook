@@ -1,16 +1,6 @@
 {
-  "contacts": [
-    {
-      "name": "ccccc",
-      "id": 1
-    },
-    {
-      "name": "qqq",
-      "id": 2
-    },
-    {
-      "name": "vvvb",
-      "id": 3
-    }
-  ]
+  "contacts": [],
+  "authorization": {
+    "key": "alexsm.dev@gmail.comqwerty"
+  }
 }

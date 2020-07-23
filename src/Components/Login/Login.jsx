@@ -2,13 +2,16 @@ import React from 'react';
 import {Field, reduxForm} from 'redux-form'
 import {connect} from 'react-redux';
 import {Redirect} from "react-router-dom";
+import * as axios from "axios";
+import {requestState} from "../../redux/store/store";
+import {getData} from "./authReducer";
 
 const Login = (props) => {
     const login = (formData) => {
         props.login(formData)
     }
 
-    if (props.isAuth) return <Redirect to="/profile"/>
+    if (props.isAuth) return <Redirect to="/contacts"/>
 
     return (
         <div>
@@ -57,4 +60,12 @@ const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
 })
 
-export default connect(mapStateToProps, {})(Login);
+const login = (formData) => async (dispatch) => {
+    const response = await axios.get('/authorization')
+    const state = requestState()
+    if (response.data.key === Object.values(state.form.login.values).join('')) {
+        dispatch(getData())
+    }
+}
+
+export default connect(mapStateToProps, {login})(Login);

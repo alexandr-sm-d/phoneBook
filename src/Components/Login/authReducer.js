@@ -9,7 +9,7 @@ const authReducer = (state = initialState, action) => {
         case GET_DATA: {
             return {
                 ...state,
-                contacts: true
+                isAuth: true
             }
         }
         default:
