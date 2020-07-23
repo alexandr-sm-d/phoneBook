@@ -23,6 +23,7 @@ const NewContactForm = props => {
         <form onSubmit={props.handleSubmit}>
             new contact:
             <Field
+                autocomplete="off"
                 type="text"
                 placeholder="Enter your name"
                 component="input"

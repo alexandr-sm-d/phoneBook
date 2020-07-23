@@ -1,28 +1,8 @@
 {
   "contacts": [
     {
-      "name": "vlad",
-      "id": 2
-    },
-    {
-      "name": "liza",
-      "id": 3
-    },
-    {
-      "name": "maxim",
-      "id": 4
-    },
-    {
-      "name": "ivan",
-      "id": 5
-    },
-    {
-      "name": "Petr",
-      "id": 6
-    },
-    {
-      "name": "Andrey",
-      "id": 7
+      "name": "alex",
+      "id": 1
     }
   ],
   "authorization": {
