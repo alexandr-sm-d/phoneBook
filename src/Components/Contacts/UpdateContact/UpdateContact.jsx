@@ -11,6 +11,7 @@ export const UpdateContact = (props) => {
     function solve(formData) {
         let id = props.id
         props.updateContact(formData, id)
+        debugger // в id то что нужно
     }
     return (
         <div>

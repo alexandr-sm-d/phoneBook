@@ -1,20 +1,16 @@
 {
   "contacts": [
     {
-      "name": "aaaaa",
+      "name": "bbbbbbbb",
       "id": 1
     },
     {
-      "name": "ccccc",
+      "name": "qqq",
       "id": 2
     },
     {
       "name": "vlad",
       "id": 3
-    },
-    {
-      "name": "йцу",
-      "id": 4
     }
   ]
 }
