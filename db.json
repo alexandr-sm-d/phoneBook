@@ -1,5 +1,14 @@
 {
-  "contacts": [],
+  "contacts": [
+    {
+      "name": "eqww",
+      "id": 1
+    },
+    {
+      "name": "cewc",
+      "id": 2
+    }
+  ],
   "authorization": {
     "key": "alexsm.dev@gmail.comqwerty"
   }
