@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import NewContact from "../Contacts/NewContact/NewContactContainer";
+import Search from "../Search/Search";
 
 const InterfaceApp = props => {
     const [newContactMode, setNewContactMode] = useState(false)
@@ -9,7 +10,7 @@ const InterfaceApp = props => {
         <div>
             {!newContactMode && <button onClick={() => setNewContactMode(true)}>new contact</button>}
             <button onClick={()=>setSearchMode(!searchMode)}>Search</button>
-            {searchMode && <div>search line</div>}
+            {searchMode && <Search/>}
             {newContactMode && <NewContact/>}
             {newContactMode && <button onClick={() => setNewContactMode(false)}>Close</button>}
         </div>
