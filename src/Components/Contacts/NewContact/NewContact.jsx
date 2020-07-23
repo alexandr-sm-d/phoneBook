@@ -4,10 +4,11 @@ import * as axios from "axios";
 import {getContacts} from "../ContactsContainer";
 
 export const addContact = (formData) => async dispatch => {
-    debugger
     await axios.post('/contacts', formData)
     dispatch(getContacts())
 }
+
+
 
 export const NewContact = ({addContact}) => {
     return (

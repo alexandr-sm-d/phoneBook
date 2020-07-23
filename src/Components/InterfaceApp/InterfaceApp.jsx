@@ -8,7 +8,7 @@ const InterfaceApp = props => {
         <div>
             {!newContactMode && <button onClick={() => setNewContactMode(true)}>new contact</button>}
             {newContactMode && <NewContact/>}
-            {newContactMode && <button onClick={()=>setNewContactMode(false)}>Close</button>}
+            {newContactMode && <button onClick={() => setNewContactMode(false)}>Close</button>}
         </div>
     )
 }

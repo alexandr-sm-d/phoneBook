@@ -2,9 +2,11 @@ import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunkMiddleware from 'redux-thunk'
 import { reducer as formReducer } from 'redux-form'
 import contactsReducer from "../../Components/Contacts/contactsReducer";
+import authReducer from "../../Components/Login/authReducer";
 
 let reducersLits = combineReducers({
     contacts: contactsReducer,
+    auth: authReducer,
     form: formReducer,
 })
 
