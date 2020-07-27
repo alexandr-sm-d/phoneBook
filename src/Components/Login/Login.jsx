@@ -61,8 +61,9 @@ const mapStateToProps = (state) => ({
 })
 
 const login = (formData) => async (dispatch, getState) => {
-    const {data} = await axios.get('/authorization')
-    if (data.mail + data.password === Object.values(getState().form.login.values).join('')) {
+    const {data: {mail, password}} = await axios.get('/authorization')
+    debugger
+    if (mail + password === Object.values(getState().form.login.values).join('')) {
         dispatch(getData())
     }
 }

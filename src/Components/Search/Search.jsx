@@ -2,15 +2,14 @@ import React from "react";
 import {connect} from "react-redux";
 import {Field, reduxForm} from "redux-form";
 import * as axios from "axios";
-import {requestState} from "../../redux/store/store";
 import {getContactsAC} from "../Contacts/contactsReducer";
 
-const search = () => async dispatch => {
+const search = () => async (dispatch, getState) => {
     const response = await axios.get('/contacts')
-    if (requestState().form.search.values === undefined) {
+    if (getState().form.search.values === undefined) {
         dispatch(getContactsAC(response.data))
     } else {
-        const inputStr = requestState().form.search.values.search_name
+        const inputStr = getState().form.search.values.search_name
         let matchContacts = response.data.filter((user) => {
             return user.name.includes(inputStr)
         })
