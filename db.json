@@ -5,15 +5,40 @@
       "id": 1
     },
     {
-      "name": "mukrio",
-      "id": 2
+      "name": "lexa",
+      "id": 4
     },
     {
-      "name": "muk",
-      "id": 3
+      "name": "maxim",
+      "id": 5
+    },
+    {
+      "name": "ivan",
+      "id": 6
+    },
+    {
+      "name": "iva",
+      "id": 7
+    },
+    {
+      "name": "margarita",
+      "id": 8
+    },
+    {
+      "name": "pavel",
+      "id": 9
+    },
+    {
+      "name": "anton",
+      "id": 10
+    },
+    {
+      "name": "evggggggun",
+      "id": 11
     }
   ],
   "authorization": {
-    "key": "alexsm.dev@gmail.comqwerty"
+    "mail": "alexsm.dev@gmail.com",
+    "password": "qwerty123"
   }
-}
+} 
