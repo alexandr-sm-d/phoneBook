@@ -1,20 +1,12 @@
 {
   "contacts": [
     {
-      "name": "lexa",
-      "id": 4
+      "name": "liza",
+      "id": 1
     },
     {
-      "name": "max",
-      "id": 5
-    },
-    {
-      "name": "iven",
-      "id": 6
-    },
-    {
-      "name": "mike",
-      "id": 7
+      "name": "pavel",
+      "id": 2
     }
   ],
   "authorization": {
