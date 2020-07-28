@@ -11,7 +11,8 @@ const mapStateToProps = state => {
 
 export const getContacts = () => async dispatch => {
     const response = await axios.get('/contacts')
-    dispatch(getContactsAC(response.data))
+    localStorage.setItem('contacts', JSON.stringify(response.data))
+    dispatch(getContactsAC(JSON.parse(localStorage.getItem('contacts'))))
 }
 
 export const deleteContact = (id) => async dispatch => {

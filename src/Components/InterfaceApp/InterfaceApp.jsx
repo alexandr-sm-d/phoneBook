@@ -12,7 +12,6 @@ const InterfaceApp = ({getContacts}) => {
     const [searchMode, setSearchMode] = useState(false)
     const togglerSearchMode = () => {
         setSearchMode(!searchMode)
-        getContacts()
     }
 
     return (

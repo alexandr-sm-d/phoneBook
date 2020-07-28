@@ -1,44 +1,24 @@
 {
   "contacts": [
     {
-      "name": "alex",
-      "id": 1
-    },
-    {
       "name": "lexa",
       "id": 4
     },
     {
-      "name": "maxim",
+      "name": "max",
       "id": 5
     },
     {
-      "name": "ivan",
+      "name": "iven",
       "id": 6
     },
     {
-      "name": "iva",
+      "name": "mike",
       "id": 7
-    },
-    {
-      "name": "margarita",
-      "id": 8
-    },
-    {
-      "name": "pavel",
-      "id": 9
-    },
-    {
-      "name": "anton",
-      "id": 10
-    },
-    {
-      "name": "evggggggun",
-      "id": 11
     }
   ],
   "authorization": {
     "mail": "alexsm.dev@gmail.com",
-    "password": "qwerty123"
+    "password": "1"
   }
-} 
+}
