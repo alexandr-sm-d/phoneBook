@@ -1,5 +1,5 @@
 import React from "react";
-import {NewContactReduxForm} from "../NewContact/NewContact";
+import {Field, reduxForm} from "redux-form";
 
 export const UpdateContact = ({id, updateContact, setEditMode}) => {
 
@@ -10,7 +10,27 @@ export const UpdateContact = ({id, updateContact, setEditMode}) => {
 
     return (
         <div>
-            <NewContactReduxForm onSubmit={submit}/>
+            <UpdateContactReduxForm onSubmit={submit}/>
         </div>
     )
 }
+
+const UpdateContactForm = props => {
+    return (
+        <form onSubmit={props.handleSubmit}>
+            update contact:
+            <Field
+                autocomplete="off"
+                type="text"
+                placeholder="Enter your name"
+                component="input"
+                name="name"
+            />
+            <button>Save Contact</button>
+        </form>
+    )
+}
+
+export const UpdateContactReduxForm = reduxForm({
+    form: 'update_contact'
+})(UpdateContactForm)
