@@ -3,8 +3,9 @@ import {Field, reduxForm} from 'redux-form'
 import {connect} from 'react-redux';
 import {Redirect} from "react-router-dom";
 import * as axios from "axios";
-import {requestState} from "../../redux/store/store";
 import {getData} from "./authReducer";
+import style from "./Login.module.css"
+import icon from "./../../images/unnamed.jpg"
 
 const Login = (props) => {
     const login = (formData) => {
@@ -13,42 +14,36 @@ const Login = (props) => {
 
     if (props.isAuth) return <Redirect to="/contacts"/>
 
-    return (
-        <div>
-            <div>You need to login in this app!</div>
-            <LoginReduxForm onSubmit={login}/>
-        </div>
-    )
+    return <LoginReduxForm onSubmit={login}/>
 }
 
 const LoginForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit}>
-            <div>
+        <div className={style.loginbox}>
+            <img src={icon} className={style.avatar}/>
+            <h2>Sign in to PhoneBook</h2>
+            <form onSubmit={props.handleSubmit}>
+                <p>Username</p>
                 <Field
-                    type="text"
-                    placeholder="Enter your email"
+                    autocomplete='off'
+                    required
+                    type="email"
+                    placeholder="Enter Username"
                     component='input'
                     name={"email"}/>
-            </div>
-            <div>
+                <p>User password</p>
                 <Field
-                    type="text"
-                    placeholder="Enter your password"
+                    required
+                    type="password"
+                    placeholder="Enter Password"
                     component='input'
                     type="password"
                     name="password"/>
-            </div>
-            <div>
-                <Field
-                    type="checkbox"
-                    component='input'
-                    name={"rememberMe"}/> remember me
-            </div>
-            <div>
-                <button>Log in</button>
-            </div>
-        </form>
+                <div>
+                    <button>Sign in</button>
+                </div>
+            </form>
+        </div>
     )
 }
 
