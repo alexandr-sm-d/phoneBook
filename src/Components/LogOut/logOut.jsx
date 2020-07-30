@@ -5,7 +5,8 @@ import {connect} from "react-redux";
 
 const LogOut = ({isAuth, deleteData}) => {
 
-    if (!isAuth) return <Redirect to="/login"/>
+    // if (!isAuth) return <Redirect to="/login"/>
+
     return (
         <div>
             <button onClick={deleteData}>Log Out</button>
