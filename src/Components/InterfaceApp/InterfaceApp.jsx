@@ -2,11 +2,10 @@ import React, {useState} from "react";
 import NewContact from "../Contacts/NewContact/NewContactContainer";
 import Search from "../Search/Search";
 import {connect} from "react-redux";
-import {getContacts} from "../Contacts/ContactsContainer";
-import {deleteData} from "../Login/authReducer";
 import LogOut from "../LogOut/logOut";
+import style from './InterfaceAppmodule.css'
 
-const InterfaceApp = ({getContacts}) => {
+const InterfaceApp = () => {
 
     const [newContactMode, setNewContactMode] = useState(false)
     const [searchMode, setSearchMode] = useState(false)
@@ -26,4 +25,4 @@ const InterfaceApp = ({getContacts}) => {
     )
 }
 
-export default connect(null, {getContacts})(InterfaceApp)
+export default connect(null)(InterfaceApp)

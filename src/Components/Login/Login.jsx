@@ -25,7 +25,7 @@ const LoginForm = (props) => {
             <form onSubmit={props.handleSubmit}>
                 <p>Username</p>
                 <Field
-                    autocomplete='off'
+                    // autocomplete='off'
                     required
                     type="email"
                     placeholder="Enter Username"

@@ -1,0 +1,9 @@
+.container {
+    width: 600px;
+    background: red;
+    height: 100vh;
+    margin: 0 auto;
+    background: transparent;
+    outline: 1px solid;
+    overflow: auto;
+}
