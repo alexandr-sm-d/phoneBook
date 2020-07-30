@@ -8,7 +8,7 @@ const User = forwardRef(({id, name, deleteContact, updateContact}, ref) => {
     const [editMode, setEditMode] = useState(false)
 
     return (
-        <div className={style.user} ref={ref}>
+        <div className={style.contact} ref={ref}>
             {!editMode && name}
             {editMode &&
             <UpdateContact id={id} updateContact={updateContact} setEditMode={setEditMode}/>}

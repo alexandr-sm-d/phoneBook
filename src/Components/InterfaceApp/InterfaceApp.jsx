@@ -14,13 +14,15 @@ const InterfaceApp = () => {
     }
 
     return (
-        <div>
-            <LogOut/>
-            {!newContactMode && <button onClick={() => setNewContactMode(true)}>new contact</button>}
-            <button onClick={togglerSearchMode}>Search</button>
-            {searchMode && <Search/>}
-            {newContactMode && <NewContact/>}
-            {newContactMode && <button onClick={() => setNewContactMode(false)}>Close</button>}
+        <div className={style.header}>
+            <div className={style.interfaceApp}>
+                <LogOut/>
+                {!newContactMode && <button onClick={() => setNewContactMode(true)}>new contact</button>}
+                <button onClick={togglerSearchMode}>Search</button>
+                {searchMode && <Search/>}
+                {newContactMode && <NewContact/>}
+                {newContactMode && <button onClick={() => setNewContactMode(false)}>Close</button>}
+            </div>
         </div>
     )
 }

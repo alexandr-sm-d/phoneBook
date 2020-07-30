@@ -7,14 +7,12 @@ import {Redirect, Route, Switch} from 'react-router-dom';
 
 function App() {
     return (
-        <div className="App">
-                <Switch>
-                    {/*<Route exact path='/' render={() => <Redirect to='/login'/>}/>*/}
-                    {/*<Route path='/login' render={() => <Login/>}/>*/}
-                    <Route path='/contacts' render={() => <Content/>}/>
-                    <Route exact path='/' render={() => <Redirect to='/contacts'/>}/>
-                </Switch>
-        </div>
+        <Switch>
+            {/*<Route exact path='/' render={() => <Redirect to='/login'/>}/>*/}
+            {/*<Route path='/login' render={() => <Login/>}/>*/}
+            <Route path='/contacts' render={() => <Content/>}/>
+            <Route exact path='/' render={() => <Redirect to='/contacts'/>}/>
+        </Switch>
     );
 }
 

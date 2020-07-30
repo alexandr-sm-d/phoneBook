@@ -1,7 +1,7 @@
 import React from 'react';
 import User from "../User/User";
 import FlipMove from "react-flip-move";
-import UserRef from "../User/User";
+import style from "./Contacts.module.css";
 
 class Contacts extends React.Component {
 
@@ -12,7 +12,7 @@ class Contacts extends React.Component {
     render() {
         let {contacts} = this.props.contacts
         return (
-            <div>
+            <div className={style.contacts}>
                 <FlipMove>
                     {contacts.map((user) =>
                         <User key={user.id} name={user.name} id={user.id}
