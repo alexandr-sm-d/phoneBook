@@ -1,11 +1,12 @@
 import React from "react";
+import style from './InterfaceContact.module.css'
 
 const InterfaceContact = ({id, deleteContact, setEditMode}) => {
     return (
-        <div>
-            <button onClick={() => deleteContact(id)}>Delete</button>
-            <button onClick={setEditMode}>Edit</button>
-        </div>
+        <>
+            <button className={style.delete} onClick={() => deleteContact(id)}>Del</button>
+            <button className={style.edit} onClick={setEditMode}>Ed</button>
+        </>
     )
 }
 
