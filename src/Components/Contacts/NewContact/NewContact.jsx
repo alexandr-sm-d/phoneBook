@@ -1,40 +1,44 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
-import * as axios from "axios";
-import {getContacts} from "../ContactsContainer";
 import style from './NewContact.module.css'
+import icon from "../../../images/unnamed.jpg";
 
-export const addContact = (formData) => async dispatch => {
-    await axios.post('/contacts', formData)
-    dispatch(getContacts())
-}
+export const NewContact = ({addContact, setNewContactMode}) => {
+    const submit = (formData) => {
+        addContact(formData)
+        setNewContactMode(false)
+    }
 
-
-
-export const NewContact = ({addContact}) => {
     return (
         <div className={style.newContactContainer}>
-            <NewContactReduxForm onSubmit={addContact}/>
+            <NewContactReduxForm onSubmit={submit}/>
         </div>
     )
 }
 
 const NewContactForm = props => {
     return (
-        <form onSubmit={props.handleSubmit}>
-            new contact:
-            <Field
-                autocomplete="off"
-                type="text"
-                placeholder="Enter your name"
-                component="input"
-                name="name"
-            />
-            <button>Save Contact</button>
-        </form>
+        <div className={style.loginbox}>
+            <h2>New Contact:</h2>
+            <form onSubmit={props.handleSubmit}>
+                <p>Name</p>
+                <Field
+                    autocomplete='off'
+                    required
+                    placeholder="Enter your name"
+                    component='input'
+                    name="name"/>
+                <div>
+                    <button>Save Contact</button>
+                </div>
+            </form>
+        </div>
     )
 }
 
 export const NewContactReduxForm = reduxForm({
     form: 'new_contact'
 })(NewContactForm)
+
+
+

@@ -1,11 +1,18 @@
 import React, {useState} from "react";
-import NewContact from "../Contacts/NewContact/NewContactContainer";
 import Search from "../Search/Search";
 import {connect} from "react-redux";
 import LogOut from "../LogOut/logOut";
 import style from './InterfaceApp.module.css'
+import * as axios from "axios";
+import {getContacts} from "../Contacts/ContactsContainer";
+import {NewContact} from "../Contacts/NewContact/NewContact";
 
-const InterfaceApp = () => {
+export const addContact = (formData) => async dispatch => {
+    await axios.post('/contacts', formData)
+    dispatch(getContacts())
+}
+
+const InterfaceApp = ({addContact}) => {
 
     const [newContactMode, setNewContactMode] = useState(false)
     const [searchMode, setSearchMode] = useState(false)
@@ -24,7 +31,7 @@ const InterfaceApp = () => {
                     className={style.search}
                     onClick={togglerSearchMode}>S</button>
                 {searchMode && <Search/>}
-                {newContactMode && <NewContact/>}
+                {newContactMode && <NewContact addContact={addContact} setNewContactMode={setNewContactMode}/>}
                 {newContactMode && <button
                     className={style.closeNC}
                     onClick={() => setNewContactMode(false)}>C</button>}
@@ -33,4 +40,4 @@ const InterfaceApp = () => {
     )
 }
 
-export default connect(null)(InterfaceApp)
+export default connect(null, {addContact})(InterfaceApp)
