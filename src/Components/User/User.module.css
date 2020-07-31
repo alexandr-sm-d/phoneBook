@@ -1,7 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
 .contact {
     width: 100%;
-    height: 50px;
-    background: #0d2f57;
+    height: 70px;
     margin-bottom: 15px;
     color: white;
+}
+
+.info {
+    background: #e09696;
+    border-radius: 25px 0 0 25px;
+    display: inline-block;
+    width: 50%;
+    height: 70px;
+    padding: 10px;
+    overflow: auto;
+}
+
+.card {
+    border-radius: 0 25px 25px 0;
+    display: inline-block;
+    width: 50%;
+    height: 70px;
+    /*border: 1px solid green;*/
+    position: relative;
+    transition: transform 1s linear;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 25px 25px 0;
+    /*border: 1px solid blue;*/
+    position: absolute;
+}
+
+.back {
+    background: #e09696;
+    transform: rotateX(180deg);
+    border-left: 3px solid #d69292;
+}
+
+.front {
+    background: #e09696;
+    backface-visibility: hidden;
+    border-left: 3px solid #d69292;
+}
+
+.card:hover {
+    transform: rotateX(180deg);
 }

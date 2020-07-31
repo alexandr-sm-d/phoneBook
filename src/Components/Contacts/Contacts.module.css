@@ -3,4 +3,7 @@
     margin: 0 auto;
     overflow: auto;
     height: 100vh;
+    padding-top: 60px;
 }
+
+.contacts::-webkit-scrollbar { width: 0; }

@@ -9,10 +9,16 @@ const User = forwardRef(({id, name, deleteContact, updateContact}, ref) => {
 
     return (
         <div className={style.contact} ref={ref}>
-            {!editMode && name}
-            {editMode &&
-            <UpdateContact id={id} updateContact={updateContact} setEditMode={setEditMode}/>}
-            <InterfaceContact id={id} deleteContact={deleteContact} setEditMode={setEditMode}/>
+            <div className={style.info}>
+                {!editMode && <span>{name}</span>}
+            </div>
+            <div className={style.card}>
+                <div className={style.back}>
+                    {editMode && <UpdateContact id={id} updateContact={updateContact} setEditMode={setEditMode}/>}
+                    <InterfaceContact id={id} deleteContact={deleteContact} setEditMode={setEditMode}/>
+                </div>
+                <div className={style.front}>FUNCTIONAL</div>
+            </div>
         </div>
     )
 })
