@@ -26,7 +26,7 @@
     height: 70px;
     /*border: 1px solid green;*/
     position: relative;
-    transition: transform 1s linear;
+    transition: transform 0.35s linear;
     transform-style: preserve-3d;
 }
 

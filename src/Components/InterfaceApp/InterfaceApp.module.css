@@ -11,4 +11,26 @@
     width: 500px;
     height: 50px;
     margin: 0 auto;
+    position: relative;
+}
+
+.newContact {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #6edb8d;
+    border: none;
+    position: absolute;
+    top: 5px;
+}
+
+.search {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #528187;
+    border: none;
+    position: absolute;
+    top: 5px;
+    left: 45px;
 }

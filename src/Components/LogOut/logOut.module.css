@@ -1,0 +1,11 @@
+.logout {
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ff5454;
+    border: none;
+    outline: none;
+}

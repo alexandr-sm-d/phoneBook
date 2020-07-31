@@ -2,6 +2,7 @@ import React from "react";
 import {Field, reduxForm} from "redux-form";
 import * as axios from "axios";
 import {getContacts} from "../ContactsContainer";
+import style from './NewContact.module.css'
 
 export const addContact = (formData) => async dispatch => {
     await axios.post('/contacts', formData)
@@ -12,8 +13,9 @@ export const addContact = (formData) => async dispatch => {
 
 export const NewContact = ({addContact}) => {
     return (
-        <div>
+        <div className={style.newContactContainer}>
             <NewContactReduxForm onSubmit={addContact}/>
+
         </div>
     )
 }

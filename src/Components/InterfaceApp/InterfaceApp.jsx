@@ -17,11 +17,15 @@ const InterfaceApp = () => {
         <div className={style.header}>
             <div className={style.interfaceApp}>
                 <LogOut/>
-                {!newContactMode && <button onClick={() => setNewContactMode(true)}>new contact</button>}
-                <button onClick={togglerSearchMode}>Search</button>
+                {!newContactMode && <button
+                    className={style.newContact}
+                    onClick={() => setNewContactMode(true)}>N</button>}
+                <button
+                    className={style.search}
+                    onClick={togglerSearchMode}>S</button>
                 {searchMode && <Search/>}
                 {newContactMode && <NewContact/>}
-                {newContactMode && <button onClick={() => setNewContactMode(false)}>Close</button>}
+                {newContactMode && <button style={{position: "absolute"}} onClick={() => setNewContactMode(false)}>Close</button>}
             </div>
         </div>
     )
