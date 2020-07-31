@@ -1,5 +1,6 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
+import style from './UpdateContact.module.css'
 
 export const UpdateContact = ({id, updateContact, setEditMode}) => {
 
@@ -9,7 +10,7 @@ export const UpdateContact = ({id, updateContact, setEditMode}) => {
     }
 
     return (
-        <div>
+        <div className={style.updateContactContainer}>
             <UpdateContactReduxForm onSubmit={submit}/>
         </div>
     )
@@ -17,17 +18,19 @@ export const UpdateContact = ({id, updateContact, setEditMode}) => {
 
 const UpdateContactForm = props => {
     return (
-        <form onSubmit={props.handleSubmit}>
-            update contact:
-            <Field
-                autocomplete="off"
-                type="text"
-                placeholder="Enter your name"
-                component="input"
-                name="name"
-            />
-            <button>Save Contact</button>
-        </form>
+        <div className={style.updateForm}>
+            <form onSubmit={props.handleSubmit}>
+                update contact:
+                <Field
+                    autocomplete="off"
+                    type="text"
+                    placeholder="Enter your name"
+                    component="input"
+                    name="name"
+                />
+                <button>Save Contact</button>
+            </form>
+        </div>
     )
 }
 

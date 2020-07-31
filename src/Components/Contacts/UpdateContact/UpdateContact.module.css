@@ -1,0 +1,6 @@
+.updateContactContainer {
+    position: fixed;
+    z-index: 9999;
+    border: 3px solid red;
+    width: 300px;
+}
