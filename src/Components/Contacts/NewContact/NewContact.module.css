@@ -13,15 +13,15 @@
 }
 
 .loginbox {
-    width: 320px;
-    height: 420px;
+    width: 250px;
+    height: 350px;
     box-sizing: border-box;
     background: linear-gradient(45deg, #4a676b, #1e2829);
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 70px 30px;
+    padding: 20px 30px;
     font-family: 'Quattrocento', serif;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     color: #e4f3f5;
@@ -35,10 +35,10 @@
 }
 
 .loginbox input {
-    margin-bottom: 25px;
+    margin-bottom: 10px;
     width: 100%;
     border: none;
-    height: 40px;
+    height: 30px;
     border-bottom: 1px solid #e4f3f5;
     outline: none;
     background: transparent;
@@ -49,8 +49,6 @@
 .loginbox input:focus {
     border-color: #6edb8d;
 }
-
-.loginbox input:focus ~ .loginbox p { color: #6edb8d;}
 
 .loginbox button {
     width: 100%;
@@ -69,7 +67,7 @@
     cursor: pointer;
 }
 
-h2 {
+h3 {
     margin: 0;
     padding: 0 0 20px;
     text-align: center;

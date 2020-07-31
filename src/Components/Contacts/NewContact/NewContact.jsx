@@ -19,8 +19,18 @@ export const NewContact = ({addContact, setNewContactMode}) => {
 const NewContactForm = props => {
     return (
         <div className={style.loginbox}>
-            <h2>New Contact:</h2>
+            <h3>New Contact:</h3>
             <form onSubmit={props.handleSubmit}>
+                <p>Phone Number</p>
+                <small>Format: 8-999-999-9999</small>
+                <Field
+                    pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                    type="tel"
+                    autocomplete='off'
+                    required
+                    placeholder="Enter your number"
+                    component='input'
+                    name="number"/>
                 <p>Name</p>
                 <Field
                     autocomplete='off'
@@ -28,8 +38,14 @@ const NewContactForm = props => {
                     placeholder="Enter your name"
                     component='input'
                     name="name"/>
+                <p>Last Name</p>
+                <Field
+                    autocomplete='off'
+                    placeholder="Enter your lastname"
+                    component='input'
+                    name="lastname"/>
                 <div>
-                    <button>Save Contact</button>
+                    <button>Save</button>
                 </div>
             </form>
         </div>
