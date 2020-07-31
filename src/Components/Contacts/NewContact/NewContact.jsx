@@ -15,7 +15,6 @@ export const NewContact = ({addContact}) => {
     return (
         <div className={style.newContactContainer}>
             <NewContactReduxForm onSubmit={addContact}/>
-
         </div>
     )
 }

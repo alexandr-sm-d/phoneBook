@@ -34,3 +34,14 @@
     top: 5px;
     left: 45px;
 }
+
+.closeNC {
+    position: absolute;
+    right: 0px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: 5px;
+    border: none;
+    background: #ff5454;
+}

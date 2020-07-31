@@ -2,8 +2,10 @@ import React from "react";
 import {connect} from "react-redux";
 import {Field, reduxForm} from "redux-form";
 import {getContactsAC} from "../Contacts/contactsReducer";
+import style from './Search.module.css'
 
 const search = () => async (dispatch, getState) => {
+
     const contacts = JSON.parse(localStorage.getItem('contacts'))
     if (getState().form.search.values === undefined) {
         dispatch(getContactsAC(contacts))
@@ -17,16 +19,12 @@ const search = () => async (dispatch, getState) => {
 }
 
 const Search = ({search}) => {
-    return (
-        <div>
-            <SearchReduxForm onChange={search}/>
-        </div>
-    )
+    return <SearchReduxForm onChange={search}/>
 }
 
 const SearchForm = props => {
     return (
-        <form>
+        <form className={style.searchForm}>
             <Field
                 autocomplete="off"
                 type="text"

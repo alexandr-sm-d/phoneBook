@@ -25,7 +25,9 @@ const InterfaceApp = () => {
                     onClick={togglerSearchMode}>S</button>
                 {searchMode && <Search/>}
                 {newContactMode && <NewContact/>}
-                {newContactMode && <button style={{position: "absolute"}} onClick={() => setNewContactMode(false)}>Close</button>}
+                {newContactMode && <button
+                    className={style.closeNC}
+                    onClick={() => setNewContactMode(false)}>C</button>}
             </div>
         </div>
     )
