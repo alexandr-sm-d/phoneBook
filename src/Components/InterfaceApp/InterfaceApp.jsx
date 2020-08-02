@@ -8,6 +8,7 @@ import {getContacts} from "../Contacts/ContactsContainer";
 import {NewContact} from "../Contacts/NewContact/NewContact";
 import {UpdateContact} from "../Contacts/UpdateContact/UpdateContact";
 import {disableUpdate} from "../Contacts/contactsReducer";
+import {Spring} from "react-spring/renderprops-universal";
 
 export const addContact = (formData) => async dispatch => {
     await axios.post('/contacts', formData)
@@ -28,9 +29,7 @@ const InterfaceApp = ({addContact, ...props}) => {
     // debugger
     const [newContactMode, setNewContactMode] = useState(false)
     const [searchMode, setSearchMode] = useState(false)
-    const togglerSearchMode = () => {
-        setSearchMode(!searchMode)
-    }
+    const togglerSearchMode = () => setSearchMode(!searchMode)
 
     return (
         <div className={style.header}>
@@ -43,13 +42,20 @@ const InterfaceApp = ({addContact, ...props}) => {
                     className={style.search}
                     onClick={togglerSearchMode}>S
                 </button>
-                {searchMode && <Search/>}
+                <Spring
+                    reset={true}
+                    from={{opacity: 0, transform: "translateY(-2rem)"}}
+                    to={{opacity: 1, transform: "translateY(0rem)"}}
+                    reverse={!searchMode}
+                    config={{duration: 200}}>
+                    {props => <div style={props}>{<Search/>}</div>}
+                </Spring>
                 {newContactMode && <NewContact addContact={addContact} setNewContactMode={setNewContactMode}/>}
                 {props.isUpdateContactMode && <UpdateContact
                     id={props.id}
                     updateContact={props.updateContact}
                     disableUpdate={props.disableUpdate}
-                />}}
+                />}
                 {newContactMode && <button
                     className={style.closeNC}
                     onClick={() => setNewContactMode(false)}>C</button>}
