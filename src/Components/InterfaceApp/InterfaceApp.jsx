@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import Search from "../Search/Search";
 import {connect} from "react-redux";
 import LogOut from "../LogOut/logOut";
@@ -8,7 +8,7 @@ import {getContacts} from "../Contacts/ContactsContainer";
 import {NewContact} from "../Contacts/NewContact/NewContact";
 import {UpdateContact} from "../Contacts/UpdateContact/UpdateContact";
 import {disableUpdate} from "../Contacts/contactsReducer";
-import {Spring} from "react-spring/renderprops-universal";
+import {Transition, config} from "react-spring/renderprops-universal";
 
 export const addContact = (formData) => async dispatch => {
     await axios.post('/contacts', formData)
@@ -29,7 +29,7 @@ const InterfaceApp = ({addContact, ...props}) => {
     // debugger
     const [newContactMode, setNewContactMode] = useState(false)
     const [searchMode, setSearchMode] = useState(false)
-    const togglerSearchMode = () => setSearchMode(!searchMode)
+    const myRef = useRef(null)
 
     return (
         <div className={style.header}>
@@ -40,16 +40,18 @@ const InterfaceApp = ({addContact, ...props}) => {
                     onClick={() => setNewContactMode(true)}>N</button>}
                 <button
                     className={style.search}
-                    onClick={togglerSearchMode}>S
+                    onClick={() => setSearchMode(!searchMode)}>S
                 </button>
-                <Spring
-                    reset={true}
+                <Transition
+                    items={searchMode}
+                    enter={{opacity: 1, transform: "translateY(0rem)"}}
+                    leave={{opacity: 0, transform: "translateY(-2rem)"}}
                     from={{opacity: 0, transform: "translateY(-2rem)"}}
-                    to={{opacity: 1, transform: "translateY(0rem)"}}
-                    reverse={!searchMode}
-                    config={{duration: 200}}>
-                    {props => <div style={props}>{<Search/>}</div>}
-                </Spring>
+                    config={config.wobbly}>
+                    {item => item && (
+                        props => <div style={props}>{<Search/>}</div>
+                    )}
+                </Transition>
                 {newContactMode && <NewContact addContact={addContact} setNewContactMode={setNewContactMode}/>}
                 {props.isUpdateContactMode && <UpdateContact
                     id={props.id}
