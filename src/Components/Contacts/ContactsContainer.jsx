@@ -1,11 +1,12 @@
 import Contacts from "./Contacts";
+import {enableUpdate, getContactsAC, getID} from "./contactsReducer"
 import {connect} from "react-redux";
-import {getContactsAC} from "./contactsReducer"
 import * as axios from "axios";
 
 const mapStateToProps = state => {
     return {
-        contacts: state.contacts
+        contacts: state.contacts,
+        // isUpdateContactMode: state.contacts.isUpdateContactMode,
     }
 }
 
@@ -16,14 +17,11 @@ export const getContacts = () => async dispatch => {
 }
 
 export const deleteContact = (id) => async dispatch => {
+    debugger
     await axios.delete('/contacts/' + id)
     dispatch(getContacts())
 }
 
-export const updateContact = (formData, id) => async dispatch => {
-    await axios.put('/contacts/' + id, formData)
-    dispatch(getContacts())
-}
-
-
-export default connect(mapStateToProps, {getContacts, deleteContact, updateContact})(Contacts)
+export default connect(mapStateToProps,
+    {getContacts, deleteContact, enableUpdate, getID})
+(Contacts)

@@ -10,7 +10,9 @@ class Contacts extends React.Component {
     }
 
     render() {
-        let {contacts} = this.props.contacts
+        // let props = this.props;
+        let {contacts} = this.props.contacts;
+        // debugger
         return (
             <div className={style.contacts}>
                 <FlipMove>
@@ -18,6 +20,8 @@ class Contacts extends React.Component {
                         <User key={user.id} name={user.name} id={user.id}
                               deleteContact={this.props.deleteContact}
                               updateContact={this.props.updateContact}
+                              enableUpdate={this.props.enableUpdate}
+                              getID={this.props.getID}
                         />)}
                 </FlipMove>
             </div>

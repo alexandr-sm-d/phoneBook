@@ -1,7 +1,7 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
 import style from './NewContact.module.css'
-import icon from "../../../images/unnamed.jpg";
+
 
 export const NewContact = ({addContact, setNewContactMode}) => {
     const submit = (formData) => {
