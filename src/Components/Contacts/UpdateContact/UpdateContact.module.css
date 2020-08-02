@@ -1,7 +1,7 @@
 .updateContactContainer {
     width: 100vw;
     height: 100vh;
-    border: 3px solid red;
+    /*border: 3px solid red;*/
     box-sizing: border-box;
     position: absolute;
     /*top: 50px;*/

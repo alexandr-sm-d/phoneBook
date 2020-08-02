@@ -1,9 +1,16 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
 import style from './UpdateContact.module.css'
+import store from './../../../redux/store/store'
 
 
 export const UpdateContact = ({id, updateContact, disableUpdate}) => {
+    const updatedUser = store.getState().contacts.contacts.find((user) => user.id === id)
+    const initialValues = {
+        number: updatedUser.number,
+        name: updatedUser.name,
+        lastname: updatedUser.lastname
+    }
 
     const submit = formData => {
         updateContact(formData, id)
@@ -12,7 +19,7 @@ export const UpdateContact = ({id, updateContact, disableUpdate}) => {
 
     return (
         <div className={style.updateContactContainer}>
-            <UpdateContactReduxForm onSubmit={submit}/>
+            <UpdateContactReduxForm onSubmit={submit} initialValues={initialValues}/>
         </div>
     )
 }
