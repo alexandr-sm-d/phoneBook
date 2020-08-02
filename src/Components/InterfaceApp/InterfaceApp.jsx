@@ -31,6 +31,11 @@ const InterfaceApp = ({addContact, ...props}) => {
     const [searchMode, setSearchMode] = useState(false)
     const myRef = useRef(null)
 
+    const togglerSearchMode = () => {
+        setSearchMode(!searchMode)
+        searchMode && (props.getContacts())
+    }
+
     return (
         <div className={style.header}>
             <div className={style.interfaceApp}>
@@ -40,7 +45,7 @@ const InterfaceApp = ({addContact, ...props}) => {
                     onClick={() => setNewContactMode(true)}>N</button>}
                 <button
                     className={style.search}
-                    onClick={() => setSearchMode(!searchMode)}>S
+                    onClick={togglerSearchMode}>S
                 </button>
                 <Transition
                     items={searchMode}
@@ -66,4 +71,4 @@ const InterfaceApp = ({addContact, ...props}) => {
     )
 }
 
-export default connect(mapStateToProps, {addContact, updateContact, disableUpdate})(InterfaceApp)
+export default connect(mapStateToProps, {addContact, updateContact, disableUpdate, getContacts})(InterfaceApp)
