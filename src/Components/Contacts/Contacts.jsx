@@ -18,6 +18,7 @@ class Contacts extends React.Component {
                 <FlipMove>
                     {contacts.map((user) =>
                         <User key={user.id} name={user.name} id={user.id}
+                              lastname={user.lastname}
                               deleteContact={this.props.deleteContact}
                               updateContact={this.props.updateContact}
                               enableUpdate={this.props.enableUpdate}

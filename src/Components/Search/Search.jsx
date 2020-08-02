@@ -10,9 +10,9 @@ const search = () => async (dispatch, getState) => {
     if (getState().form.search.values === undefined) {
         dispatch(getContactsAC(contacts))
     } else {
-        const inputStr = getState().form.search.values.search_name
+        const inputStr = getState().form.search.values.search_name.toLowerCase()
         let matchContacts = contacts.filter((user) => {
-            return user.name.includes(inputStr)
+            return user.name.toLowerCase().includes(inputStr)
         })
         dispatch(getContactsAC(matchContacts))
     }

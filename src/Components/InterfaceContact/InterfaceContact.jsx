@@ -2,7 +2,7 @@ import React from "react";
 import style from './InterfaceContact.module.css'
 
 
-const InterfaceContact = ({id, deleteContact, setEditMode, enableUpdate, getID}) => {
+const InterfaceContact = ({id, deleteContact, enableUpdate, getID}) => {
     const editMode = () => {
         getID(id)
         enableUpdate()
@@ -10,6 +10,7 @@ const InterfaceContact = ({id, deleteContact, setEditMode, enableUpdate, getID})
 
     return (
         <>
+            <button className={style.call}></button>
             <button className={style.delete} onClick={() => deleteContact(id)}>Del</button>
             <button className={style.edit} onClick={editMode}>Ed</button>
         </>
