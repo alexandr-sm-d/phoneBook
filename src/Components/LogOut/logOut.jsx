@@ -7,7 +7,7 @@ import LogoutOutlined from "@ant-design/icons/lib/icons/LogoutOutlined";
 
 const LogOut = ({isAuth, deleteData}) => {
 
-    // if (!isAuth) return <Redirect to="/login"/>
+    if (!isAuth) return <Redirect to="/login"/>
 
     return <button
         onClick={deleteData}

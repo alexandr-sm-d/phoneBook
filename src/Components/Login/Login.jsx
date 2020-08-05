@@ -3,7 +3,7 @@ import {Field, reduxForm} from 'redux-form'
 import {connect} from 'react-redux';
 import {Redirect} from "react-router-dom";
 import * as axios from "axios";
-import {getData} from "./authReducer";
+import {errorAuth, getData} from "./authReducer";
 import style from "./Login.module.css"
 import icon from "./../../images/unnamed.jpg"
 
@@ -14,7 +14,7 @@ const Login = (props) => {
 
     if (props.isAuth) return <Redirect to="/contacts"/>
 
-    return <LoginReduxForm onSubmit={login}/>
+    return <LoginReduxForm onSubmit={login} errorLogin={props.errorLogin}/>
 }
 
 const LoginForm = (props) => {
@@ -39,6 +39,9 @@ const LoginForm = (props) => {
                     component='input'
                     type="password"
                     name="password"/>
+                {props.errorLogin && <div className={style.errorMessage}>
+                    {props.errorLogin}
+                </div>}
                 <div>
                     <button>Sign in</button>
                 </div>
@@ -53,13 +56,17 @@ const LoginReduxForm = reduxForm({
 
 const mapStateToProps = (state) => ({
     isAuth: state.auth.isAuth,
+    errorLogin: state.auth.errorLogin
 })
 
 const login = (formData) => async (dispatch, getState) => {
-    const {data: {mail, password}} = await axios.get('/authorization')
+    const {data: {mail, password, error}} = await axios.get('/authorization')
     if (mail + password === Object.values(getState().form.login.values).join('')) {
         dispatch(getData())
+    } else {
+        dispatch(errorAuth(error))
+        setTimeout(() => dispatch(errorAuth('')), 2000)
     }
 }
 
-export default connect(mapStateToProps, {login})(Login);
+export default connect(mapStateToProps, {login, errorAuth})(Login);

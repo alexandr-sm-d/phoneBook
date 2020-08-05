@@ -78,3 +78,12 @@ h2 {
     text-align: center;
     font-size: 2em;
 }
+
+.errorMessage {
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ad0c0c;
+    margin-bottom: 10px;
+}
