@@ -9,6 +9,10 @@ import {NewContact} from "../Contacts/NewContact/NewContact";
 import {UpdateContact} from "../Contacts/UpdateContact/UpdateContact";
 import {disableUpdate} from "../Contacts/contactsReducer";
 import {Transition, config} from "react-spring/renderprops-universal";
+import UserAddOutlined from "@ant-design/icons/lib/icons/UserAddOutlined";
+import SearchOutlined from "@ant-design/icons/lib/icons/SearchOutlined";
+import CloseCircleOutlined from "@ant-design/icons/lib/icons/CloseCircleOutlined";
+import CloseOutlined from "@ant-design/icons/lib/icons/CloseOutlined";
 
 export const addContact = (formData) => async dispatch => {
     await axios.post('/contacts', formData)
@@ -42,10 +46,13 @@ const InterfaceApp = ({addContact, ...props}) => {
                 <LogOut/>
                 {!newContactMode && <button
                     className={style.newContact}
-                    onClick={() => setNewContactMode(true)}>N</button>}
+                    onClick={() => setNewContactMode(true)}>
+                    <UserAddOutlined />
+                </button>}
                 <button
                     className={style.search}
-                    onClick={togglerSearchMode}>S
+                    onClick={togglerSearchMode}>
+                    <SearchOutlined />
                 </button>
                 <Transition
                     items={searchMode}
@@ -65,7 +72,9 @@ const InterfaceApp = ({addContact, ...props}) => {
                 />}
                 {newContactMode && <button
                     className={style.closeNC}
-                    onClick={() => setNewContactMode(false)}>C</button>}
+                    onClick={() => setNewContactMode(false)}>
+                    <CloseOutlined />
+                </button>}
             </div>
         </div>
     )

@@ -5,7 +5,13 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #ff5454;
+    background: #ed9f9f;
     border: none;
     outline: none;
+    transition: all 0.1s linear;
+}
+
+.logout:hover {
+    font-size: 18px;
+    background: #f07373;
 }

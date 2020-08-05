@@ -2,7 +2,7 @@
     width: 100vw;
     height: 50px;
     opacity: 0.9;
-    background: #ffb92e;
+    background: #ebe6e6;
     position: absolute;
     z-index: 2;
 }
@@ -18,21 +18,45 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #6edb8d;
+    background: #49e3a3;
     border: none;
     position: absolute;
     top: 5px;
+    transition: all 0.1s linear;
+}
+
+.newContact,
+.newContact:active,
+.newContact:focus {
+    outline: none;
+}
+
+.newContact:hover {
+    font-size: 18px;
+    background: #3dd193;
 }
 
 .search {
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #528187;
+    background: #b8d5de;
     border: none;
     position: absolute;
     top: 5px;
     left: 45px;
+    transition: all 0.1s linear;
+}
+
+.search:hover {
+    font-size: 18px;
+    background: #a1c2cc;
+}
+
+.search,
+.search:active,
+.search:focus {
+    outline: none;
 }
 
 .closeNC {
@@ -43,5 +67,19 @@
     border-radius: 50%;
     top: 5px;
     border: none;
-    background: #ff5454;
+    background: #ed9f9f;
+    transition: all 0.2s linear;
+}
+
+.closeNC:hover {
+    font-size: 18px;
+    background: #f07373;
+    transform: rotate(180deg);
+}
+
+
+.closeNC,
+.closeNC:active,
+.closeNC:focus {
+    outline: none;
 }

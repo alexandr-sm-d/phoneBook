@@ -7,29 +7,50 @@
     border: none;
     margin-left: 2px;
     margin-right: 2px;
-    transition: background 0.2s linear;
+    transition: all 0.1s linear;
 }
 
 .call:hover {
-    background: green;
+    background: #33d6b0;
+    font-size: 18px;
 }
 
 .delete:hover {
-     background: red;
+     background: #f78686;
+    font-size: 18px;
  }
 
 .edit:hover {
-    background: blue;
+    background: #4bd8eb;
+    font-size: 18px;
 }
 
 .delete {
-    background: #ff5454;
+    background: #f7a8a8;
 }
 
 .edit {
-    background: #e4f3f5;
+    background: #97ecf7;
 }
 
 .call {
-    background: #25a869;
+    background: #5ae8b4;
+}
+
+.call,
+.call:active,
+.call:focus {
+    outline: none;
+}
+
+.edit,
+.edit:active,
+.edit:focus {
+    outline: none;
+}
+
+.delete,
+.delete:active,
+.delete:focus {
+    outline: none;
 }
