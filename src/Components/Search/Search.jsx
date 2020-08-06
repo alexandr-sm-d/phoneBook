@@ -15,11 +15,7 @@ const search = () => async (dispatch, getState) => {
         if (!isNaN(+inputStr)) {
             dispatch(numberSearchMode())
             let matchContacts = contacts.filter((user) => {
-                return user.number
-                    .split('')
-                    .filter((el) => el != '-')
-                    .join('')
-                    .includes(inputStr)
+                return user.number.includes(inputStr)
             })
             dispatch(getContactsAC(matchContacts))
         } else {

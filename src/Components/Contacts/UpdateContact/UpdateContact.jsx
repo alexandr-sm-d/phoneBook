@@ -2,6 +2,7 @@ import React from "react";
 import {Field, reduxForm} from "redux-form";
 import style from './UpdateContact.module.css'
 import store from './../../../redux/store/store'
+import {createTextMask} from "redux-form-input-masks";
 
 
 export const UpdateContact = ({id, updateContact, disableUpdate}) => {
@@ -24,21 +25,25 @@ export const UpdateContact = ({id, updateContact, disableUpdate}) => {
     )
 }
 
+const phoneMask = createTextMask({
+    pattern: '9 (999) 999-9999',
+});
+
 const UpdateContactForm = props => {
     return (
         <div className={style.loginbox}>
             <h3>Update Contact:</h3>
             <form onSubmit={props.handleSubmit}>
                 <p>Phone Number</p>
-                <small>Format: 8-999-999-9999</small>
+                <small>Format: 8 (999) 999-9999</small>
                 <Field
-                    pattern="[0-9]{1}-[0-9]{3}-[0-9]{3}-[0-9]{4}"
                     type="tel"
                     autocomplete='off'
                     required
                     placeholder="Enter your number"
                     component='input'
-                    name="number"/>
+                    name="number"
+                    {...phoneMask}/>
                 <p>Name</p>
                 <Field
                     autocomplete='off'
