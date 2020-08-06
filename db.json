@@ -6,19 +6,40 @@
       "id": 1
     },
     {
-      "number": "5-555-555-5555",
-      "name": "Осел",
+      "number": "8-999-654-9999",
+      "name": "Максим",
       "id": 2
     },
     {
-      "number": "9-999-999-9999",
-      "name": "Влад",
+      "number": "8-999-999-9999",
+      "name": "Владимир",
       "id": 3
+    },
+    {
+      "number": "8-999-642-9999",
+      "name": "Павел",
+      "id": 4
+    },
+    {
+      "number": "8-999-999-9999",
+      "name": "Антон",
+      "lastname": "Лапенко",
+      "id": 5
+    },
+    {
+      "number": "8-499-999-9999",
+      "name": "Марина",
+      "id": 6
+    },
+    {
+      "number": "8-949-999-9999",
+      "name": "Елена",
+      "id": 7
     }
   ],
   "authorization": {
     "mail": "alexsm.dev@gmail.com",
-    "password": "1",
+    "password": "react-app",
     "error": "Incorrect username or password."
   }
 }

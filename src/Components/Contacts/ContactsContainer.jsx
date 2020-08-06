@@ -6,7 +6,7 @@ import * as axios from "axios";
 const mapStateToProps = state => {
     return {
         contacts: state.contacts,
-        // isUpdateContactMode: state.contacts.isUpdateContactMode,
+        isNumberSearchMode: state.contacts.isNumberSearchMode,
     }
 }
 

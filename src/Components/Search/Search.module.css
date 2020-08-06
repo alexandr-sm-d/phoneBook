@@ -13,7 +13,11 @@
 }
 
 .searchForm input,
-.searchForm input:active,
+.searchForm input:active {
+    outline: none;
+}
+
 .searchForm input:focus {
     outline: none;
+    border: 1px solid #70d4ff
 }

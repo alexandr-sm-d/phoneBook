@@ -1,7 +1,7 @@
 import React from "react";
 import {connect} from "react-redux";
 import {Field, reduxForm} from "redux-form";
-import {getContactsAC} from "../Contacts/contactsReducer";
+import {getContactsAC, numberSearchMode, stringSearchMode} from "../Contacts/contactsReducer";
 import style from './Search.module.css'
 
 const search = () => async (dispatch, getState) => {
@@ -9,12 +9,25 @@ const search = () => async (dispatch, getState) => {
     const contacts = JSON.parse(localStorage.getItem('contacts'))
     if (getState().form.search.values === undefined) {
         dispatch(getContactsAC(contacts))
+        dispatch(stringSearchMode())
     } else {
         const inputStr = getState().form.search.values.search_name.toLowerCase()
-        let matchContacts = contacts.filter((user) => {
-            return user.name.toLowerCase().includes(inputStr)
-        })
-        dispatch(getContactsAC(matchContacts))
+        if (!isNaN(+inputStr)) {
+            dispatch(numberSearchMode())
+            let matchContacts = contacts.filter((user) => {
+                return user.number
+                    .split('')
+                    .filter((el) => el != '-')
+                    .join('')
+                    .includes(inputStr)
+            })
+            dispatch(getContactsAC(matchContacts))
+        } else {
+            let matchContacts = contacts.filter((user) => {
+                return (user.name + user.lastname).toLowerCase().includes(inputStr)
+            })
+            dispatch(getContactsAC(matchContacts))
+        }
     }
 }
 

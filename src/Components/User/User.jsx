@@ -4,12 +4,17 @@ import {UpdateContact} from "../Contacts/UpdateContact/UpdateContact";
 import style from "./User.module.css"
 import MoreOutlined from "@ant-design/icons/lib/icons/MoreOutlined";
 
-const User = forwardRef(({id, name, lastname, deleteContact, updateContact, enableUpdate, getID}, ref) => {
+const User = forwardRef(({id, name, lastname, number,
+                             deleteContact, updateContact,
+                             enableUpdate, getID,
+                             isNumberSearchMode}, ref) => {
 
     return (
         <div className={style.contact} ref={ref}>
             <div className={style.info}>
-                <span>{name} {lastname}</span>
+                <div><span>{name} {lastname} </span>
+                    {isNumberSearchMode && <span className={style.number}>({number})</span>}
+                </div>
             </div>
             <div className={style.card}>
                 <div className={style.front}>
