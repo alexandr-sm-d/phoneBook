@@ -33,7 +33,7 @@
 
 .newContact:hover {
     font-size: 18px;
-    background: #3dd193;
+    background: #178758;
 }
 
 .search {
@@ -50,7 +50,7 @@
 
 .search:hover {
     font-size: 18px;
-    background: #a1c2cc;
+    background: #4d8799;
 }
 
 .search,
@@ -73,7 +73,7 @@
 
 .closeNC:hover {
     font-size: 18px;
-    background: #f07373;
+    background: #913a3a;
     transform: rotate(180deg);
 }
 

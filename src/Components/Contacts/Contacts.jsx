@@ -18,11 +18,15 @@ class Contacts extends React.Component {
                         <User key={user.id} name={user.name} id={user.id}
                               lastname={user.lastname}
                               number={user.number}
+                              idView={this.props.idView}
                               deleteContact={this.props.deleteContact}
                               updateContact={this.props.updateContact}
                               enableUpdate={this.props.enableUpdate}
                               getID={this.props.getID}
                               isNumberSearchMode={this.props.isNumberSearchMode}
+                              enableViewMode={this.props.enableViewMode}
+                              disableViewMode={this.props.disableViewMode}
+                              isViewMode={this.props.isViewMode}
                         />)}
                 </FlipMove>
             </div>

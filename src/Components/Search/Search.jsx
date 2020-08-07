@@ -20,7 +20,8 @@ const search = () => async (dispatch, getState) => {
             dispatch(getContactsAC(matchContacts))
         } else {
             let matchContacts = contacts.filter((user) => {
-                return (user.name + user.lastname).toLowerCase().includes(inputStr)
+                if (user.lastname === undefined) {return (user.name).toLowerCase().includes(inputStr)}
+                else {return (user.name+user.lastname).toLowerCase().includes(inputStr)}
             })
             dispatch(getContactsAC(matchContacts))
         }

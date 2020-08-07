@@ -11,17 +11,17 @@
 }
 
 .call:hover {
-    background: #33d6b0;
+    background: #178758;
     font-size: 18px;
 }
 
 .delete:hover {
-     background: #f78686;
+    background: #913a3a;
     font-size: 18px;
- }
+}
 
 .edit:hover {
-    background: #4bd8eb;
+    background: #44a1ad;
     font-size: 18px;
 }
 

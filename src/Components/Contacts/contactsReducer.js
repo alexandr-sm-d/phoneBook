@@ -4,12 +4,16 @@ const GET_ID = 'GET_ID'
 const DISABLE_UPDATE_MODE = 'DISABLE_UPDATE_MODE'
 const NUMBER_SEARCH_MODE = 'NUMBER_SEARCH_MODE'
 const STRING_SEARCH_MODE = 'STRING_SEARCH_MODE'
+const ENABLE_VIEW_MODE = 'ENABLE_VIEW_MODE'
+const DISABLE_VIEW_MODE = 'DISABLE_VIEW_MODE'
 
 let initialState = {
     contacts: [],
     isUpdateContactMode: false,
     id: null,
     isNumberSearchMode: false,
+    isViewMode: false,
+    idView: null
 }
 
 const contactsReducer = (state = initialState, action) => {
@@ -21,7 +25,6 @@ const contactsReducer = (state = initialState, action) => {
             }
         }
         case ENABLE_UPDATE_MODE: {
-            // debugger
             return {
                 ...state,
                 isUpdateContactMode: true
@@ -51,6 +54,20 @@ const contactsReducer = (state = initialState, action) => {
                 isNumberSearchMode: false
             }
         }
+        case ENABLE_VIEW_MODE: {
+            return {
+                ...state,
+                isViewMode: true,
+                idView: action.id
+            }
+        }
+        case DISABLE_VIEW_MODE: {
+            return {
+                ...state,
+                isViewMode: false,
+                idView: null
+            }
+        }
         default:
             return state;
     }
@@ -62,5 +79,7 @@ export const disableUpdate = () => ({type: DISABLE_UPDATE_MODE})
 export const getID = (id) => ({type: GET_ID, id})
 export const numberSearchMode = () => ({type: NUMBER_SEARCH_MODE})
 export const stringSearchMode = () => ({type: STRING_SEARCH_MODE})
+export const enableViewMode = (id) => ({type: ENABLE_VIEW_MODE, id})
+export const disableViewMode = () => ({type: DISABLE_VIEW_MODE})
 
 export default contactsReducer;

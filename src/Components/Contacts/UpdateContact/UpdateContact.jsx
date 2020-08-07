@@ -26,7 +26,7 @@ export const UpdateContact = ({id, updateContact, disableUpdate}) => {
 }
 
 const phoneMask = createTextMask({
-    pattern: '9 (999) 999-9999',
+    pattern: '8 (999) 999-9999',
 });
 
 const UpdateContactForm = props => {

@@ -18,7 +18,7 @@ export const NewContact = ({addContact, setNewContactMode}) => {
 }
 
 const phoneMask = createTextMask({
-    pattern: '9 (999) 999-9999',
+    pattern: '8 (999) 999-9999',
 });
 
 const NewContactForm = props => {
