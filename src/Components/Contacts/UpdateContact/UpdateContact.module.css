@@ -20,7 +20,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 20px 30px;
-    font-family: 'Quattrocento', serif;
+    font-family: 'Quattrocento',  'Open Sans', serif;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     color: #e4f3f5;
     opacity: 0.9;
@@ -57,7 +57,7 @@
     font-size: 18px;
     color: #e4f3f5;
     border-radius: 5px;
-    font-family: 'Quattrocento', serif;
+    font-family: 'Quattrocento',  'Open Sans', serif;
 }
 
 .loginbox button:hover {

@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react";
+import React, {useState} from "react";
 import Search from "../Search/Search";
 import {connect} from "react-redux";
 import LogOut from "../LogOut/logOut";
@@ -11,7 +11,6 @@ import {disableUpdate} from "../Contacts/contactsReducer";
 import {Transition, config} from "react-spring/renderprops-universal";
 import UserAddOutlined from "@ant-design/icons/lib/icons/UserAddOutlined";
 import SearchOutlined from "@ant-design/icons/lib/icons/SearchOutlined";
-import CloseCircleOutlined from "@ant-design/icons/lib/icons/CloseCircleOutlined";
 import CloseOutlined from "@ant-design/icons/lib/icons/CloseOutlined";
 
 export const addContact = (formData) => async dispatch => {
@@ -30,10 +29,9 @@ const mapStateToProps = (state) => ({
 })
 
 const InterfaceApp = ({addContact, ...props}) => {
-    // debugger
+
     const [newContactMode, setNewContactMode] = useState(false)
     const [searchMode, setSearchMode] = useState(false)
-    const myRef = useRef(null)
 
     const togglerSearchMode = () => {
         setSearchMode(!searchMode)

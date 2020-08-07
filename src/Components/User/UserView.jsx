@@ -7,10 +7,10 @@ const UserView = ({disableViewMode, ...props}) => {
     return (
         <div className={style.viewContainer}>
             <div className={style.viewMode}>
-                <img src={icon} className={style.avatar}/>
-                <p>Name: {props.name}</p>
-                <p>Lastname: {props.lastname}</p>
-                <p>Number: {props.number}</p>
+                <img src={icon} className={style.avatar} alt=''/>
+                <p><span>Name</span>: {props.name}</p>
+                <p><span>Lastname</span>: {props.lastname}</p>
+                <p><span>Number</span>: {props.number}</p>
                 <button onClick={disableViewMode} className={style.close}>
                     <CloseOutlined />
                 </button>

@@ -36,7 +36,7 @@ const SearchForm = props => {
     return (
         <form className={style.searchForm}>
             <Field
-                autocomplete="off"
+                autoComplete="off"
                 type="text"
                 placeholder="Enter contact"
                 component="input"

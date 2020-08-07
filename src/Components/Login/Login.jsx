@@ -20,12 +20,11 @@ const Login = (props) => {
 const LoginForm = (props) => {
     return (
         <div className={style.loginbox}>
-            <img src={icon} className={style.avatar}/>
+            <img src={icon} className={style.avatar} alt=''/>
             <h2>Sign in to PhoneBook</h2>
             <form onSubmit={props.handleSubmit}>
                 <p>Username</p>
                 <Field
-                    // autocomplete='off'
                     required
                     type="email"
                     placeholder="Enter Username"
@@ -34,7 +33,6 @@ const LoginForm = (props) => {
                 <p>User password</p>
                 <Field
                     required
-                    type="password"
                     placeholder="Enter Password"
                     component='input'
                     type="password"

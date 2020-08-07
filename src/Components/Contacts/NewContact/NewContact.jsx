@@ -30,7 +30,7 @@ const NewContactForm = props => {
                 <small>Format: 8 (999) 999-9999</small>
                 <Field
                     type="tel"
-                    autocomplete='off'
+                    autoComplete='off'
                     required
                     placeholder="Enter your number"
                     component='input'
@@ -38,14 +38,14 @@ const NewContactForm = props => {
                     {...phoneMask}/>
                 <p>Name</p>
                 <Field
-                    autocomplete='off'
+                    autoComplete='off'
                     required
                     placeholder="Enter your name"
                     component='input'
                     name="name"/>
                 <p>Last Name</p>
                 <Field
-                    autocomplete='off'
+                    autoComplete='off'
                     placeholder="Enter your lastname"
                     component='input'
                     name="lastname"/>
